@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美味餐點，快速送到家 - 您的品牌</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 自定義字體，如果需要 */
+        body {
+            font-family: 'Inter', '微軟正黑體', sans-serif;
+        }
+        /* 確保圖片在容器內正確顯示 */
+        .object-cover {
+            object-fit: cover;
+        }
+        /* 隱藏滾動條但允許滾動 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        /* 自定義按鈕樣式 */
+        .btn-primary {
+            @apply bg-orange-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-orange-600 transition duration-300 ease-in-out;
+        }
+        .btn-secondary {
+            @apply bg-white text-orange-500 border border-orange-500 px-6 py-3 rounded-full shadow-md hover:bg-orange-50 hover:text-white transition duration-300 ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-gray-100 py-3 border-b border-gray-200">
+        <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+            <div class="text-sm sm:text-base mb-2 sm:mb-0 text-center sm:text-left">
+                <p class="font-semibold text-gray-700">美味獨享套餐 <span class="text-xs text-gray-500">(限時優惠)</span></p>
+                <p class="text-orange-500 font-bold text-lg">$250 <span class="text-gray-400 line-through text-sm ml-1">$300</span></p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="flex items-center text-gray-600 hover:text-orange-500 transition-colors duration-200">
+                    <i class="fas fa-truck mr-2"></i>
+                    <span class="text-sm sm:text-base">外送</span>
+                </a>
+                <a href="#" class="flex items-center text-gray-600 hover:text-orange-500 transition-colors duration-200">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    <span class="text-sm sm:text-base">追蹤</span>
+                </a>
+                <a href="#" class="flex items-center text-gray-600 hover:text-orange-500 transition-colors duration-200">
+                    <i class="fas fa-shopping-cart mr-2"></i>
+                    <span class="text-sm sm:text-base">購物車</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white py-6 shadow-sm">
+        <div class="container mx-auto px-4">
+            <ul class="flex flex-wrap justify-center sm:justify-around gap-y-4 sm:gap-x-8">
+                <li class="w-1/3 sm:w-auto text-center">
+                    <a href="#" class="flex flex-col items-center group">
+                        <img src="https://placehold.co/80x80/FF6600/FFFFFF?text=便當" alt="便當" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-200 group-hover:border-orange-500 transition-colors duration-200">
+                        <p class="mt-2 text-sm sm:text-base text-gray-700 group-hover:text-orange-500">便當</p>
+                    </a>
+                </li>
+                <li class="w-1/3 sm:w-auto text-center">
+                    <a href="#" class="flex flex-col items-center group">
+                        <img src="https://placehold.co/80x80/FF6600/FFFFFF?text=麵食" alt="麵食" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-200 group-hover:border-orange-500 transition-colors duration-200">
+                        <p class="mt-2 text-sm sm:text-base text-gray-700 group-hover:text-orange-500">麵食</p>
+                    </a>
+                </li>
+                <li class="w-1/3 sm:w-auto text-center">
+                    <a href="#" class="flex flex-col items-center group">
+                        <img src="https://placehold.co/80x80/FF6600/FFFFFF?text=小吃" alt="小吃" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-200 group-hover:border-orange-500 transition-colors duration-200">
+                        <p class="mt-2 text-sm sm:text-base text-gray-700 group-hover:text-orange-500">小吃</p>
+                    </a>
+                </li>
+                <li class="w-1/3 sm:w-auto text-center">
+                    <a href="#" class="flex flex-col items-center group">
+                        <img src="https://placehold.co/80x80/FF6600/FFFFFF?text=飲品" alt="飲品" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-200 group-hover:border-orange-500 transition-colors duration-200">
+                        <p class="mt-2 text-sm sm:text-base text-gray-700 group-hover:text-orange-500">飲品</p>
+                    </a>
+                </li>
+                <li class="w-1/3 sm:w-auto text-center">
+                    <a href="#" class="flex flex-col items-center group">
+                        <img src="https://placehold.co/80x80/FF6600/FFFFFF?text=甜點" alt="甜點" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gray-200 group-hover:border-orange-500 transition-colors duration-200">
+                        <p class="mt-2 text-sm sm:text-base text-gray-700 group-hover:text-orange-500">甜點</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x400/F0F0F0/333333?text=美味主餐圖片" alt="美味主餐" class="rounded-xl shadow-lg w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">品嚐道地台灣好味道</h2>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    多種經典台灣美食，嚴選在地食材，新鮮現做，讓您在家也能輕鬆享受餐廳級的美味！
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center justify-center md:justify-start text-gray-700 text-lg">
+                        <i class="fas fa-leaf text-green-500 mr-3 text-xl"></i>
+                        <span>新鮮食材，每日嚴選</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start text-gray-700 text-lg">
+                        <i class="fas fa-motorcycle text-blue-500 mr-3 text-xl"></i>
+                        <span>快速外送，熱騰騰送到家</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start text-gray-700 text-lg">
+                        <i class="fas fa-shield-alt text-yellow-500 mr-3 text-xl"></i>
+                        <span>安心保證，品質嚴格把關</span>
+                    </li>
+                </ul>
+                <button class="btn-primary">立即訂購</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-16 md:py-24 bg-gray-900 overflow-hidden">
+        <img src="https://placehold.co/1920x600/333333/FFFFFF?text=背景橫幅圖片" alt="限時優惠橫幅" class="absolute inset-0 w-full h-full object-cover opacity-60">
+        <div class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center text-white">
+            <div class="bg-black bg-opacity-50 p-8 rounded-xl shadow-2xl max-w-2xl mb-8">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">我們提供優質的服務</h3>
+                <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                    即刻體驗便捷的線上訂餐，多樣化的選擇，讓您輕鬆享受美好時光。
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="btn-secondary" onclick="scrollToContact()">聯絡我們</button>
+                    <button class="btn-primary">查看更多</button>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-8 sm:gap-16 mt-8">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-phone-alt text-orange-400 text-3xl mb-3"></i>
+                    <p class="text-lg font-semibold">線上諮詢</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-comments text-orange-400 text-3xl mb-3"></i>
+                    <p class="text-lg font-semibold">即時客服</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">顧客好評</h2>
+            <div id="reviews-carousel" class="relative overflow-hidden">
+                <div class="flex transition-transform duration-500 ease-in-out" id="reviews-container">
+                    <div class="flex-shrink-0 w-full md:w-1/3 px-4">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center h-full flex flex-col items-center justify-between">
+                            <img src="https://placehold.co/100x100/FF6600/FFFFFF?text=顧客1" alt="顧客頭像 1" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500 mb-4">
+                            <div>
+                                <p class="font-bold text-xl text-gray-800 mb-2">王小明</p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    「餐點非常美味，外送速度也很快，包裝很完整，下次還會再訂！」
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-1/3 px-4">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center h-full flex flex-col items-center justify-between">
+                            <img src="https://placehold.co/100x100/FF6600/FFFFFF?text=顧客2" alt="顧客頭像 2" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500 mb-4">
+                            <div>
+                                <p class="font-bold text-xl text-gray-800 mb-2">陳美玲</p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    「選擇多樣化，每次都能找到想吃的，而且很健康，強力推薦！」
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-1/3 px-4">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center h-full flex flex-col items-center justify-between">
+                            <img src="https://placehold.co/100x100/FF6600/FFFFFF?text=顧客3" alt="顧客頭像 3" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500 mb-4">
+                            <div>
+                                <p class="font-bold text-xl text-gray-800 mb-2">張大華</p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    「客服很親切，解決問題效率高，餐點品質一如既往的好！」
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-1/3 px-4">
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center h-full flex flex-col items-center justify-between">
+                            <img src="https://placehold.co/100x100/FF6600/FFFFFF?text=顧客1" alt="顧客頭像 1" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500 mb-4">
+                            <div>
+                                <p class="font-bold text-xl text-gray-800 mb-2">王小明</p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    「餐點非常美味，外送速度也很快，包裝很完整，下次還會再訂！」
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev-review" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md hover:bg-gray-100 transition-colors duration-200 hidden md:block">
+                    <i class="fas fa-chevron-left text-gray-700"></i>
+                </button>
+                <button id="next-review" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-md hover:bg-gray-100 transition-colors duration-200 hidden md:block">
+                    <i class="fas fa-chevron-right text-gray-700"></i>
+                </button>
+            </div>
+            <div class="flex justify-center mt-8 space-x-2" id="review-dots">
+                <span class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400 transition-colors duration-200" data-index="0"></span>
+                <span class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400 transition-colors duration-200" data-index="1"></span>
+                <span class="dot w-3 h-3 bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400 transition-colors duration-200" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">精選餐點</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <a href="#" class="block bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x300/FF6600/FFFFFF?text=滷肉飯" alt="古早味滷肉飯" class="w-full h-36 sm:h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-semibold text-lg text-gray-800">古早味滷肉飯</p>
+                    </div>
+                </a>
+                <a href="#" class="block bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x300/FF6600/FFFFFF?text=炸雞排" alt="台式炸雞排" class="w-full h-36 sm:h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-semibold text-lg text-gray-800">台式炸雞排</p>
+                    </div>
+                </a>
+                <a href="#" class="block bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x300/FF6600/FFFFFF?text=餛飩麵" alt="鮮蝦餛飩麵" class="w-full h-36 sm:h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-semibold text-lg text-gray-800">鮮蝦餛飩麵</p>
+                    </div>
+                </a>
+                <a href="#" class="block bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x300/FF6600/FFFFFF?text=牛肉麵" alt="招牌牛肉麵" class="w-full h-36 sm:h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-semibold text-lg text-gray-800">招牌牛肉麵</p>
+                    </div>
+                </a>
+                <a href="#" class="block bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x300/FF6600/FFFFFF?text=舒肥雞" alt="健康舒肥雞胸" class="w-full h-36 sm:h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-semibold text-lg text-gray-800">健康舒肥雞胸</p>
+                    </div>
+                </a>
+                <a href="#" class="block bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x300/FF6600/FFFFFF?text=手工水餃" alt="手工水餃" class="w-full h-36 sm:h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-semibold text-lg text-gray-800">手工水餃</p>
+                    </div>
+                </a>
+                <a href="#" class="block bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x300/FF6600/FFFFFF?text=鴨血" alt="麻辣鴨血臭豆腐" class="w-full h-36 sm:h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-semibold text-lg text-gray-800">麻辣鴨血臭豆腐</p>
+                    </div>
+                </a>
+                <a href="#" class="block bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/400x300/FF6600/FFFFFF?text=珍奶" alt="珍珠奶茶" class="w-full h-36 sm:h-48 object-cover">
+                    <div class="p-4 text-center">
+                        <p class="font-semibold text-lg text-gray-800">珍珠奶茶</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-info" class="py-12 md:py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">聯絡我們</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-2/3 bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/800x500/E0E0E0/333333?text=地圖顯示區" alt="地圖" class="w-full h-64 md:h-96 object-cover">
+                </div>
+                <div class="md:w-1/3 bg-white p-6 rounded-xl shadow-lg flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">美味餐點，立即送達</h3>
+                    <p class="flex items-center text-gray-700 mb-4">
+                        <i class="fas fa-map-marker-alt text-orange-500 mr-3 text-xl"></i>
+                        <span>地址：台北市信義區美食路100號</span>
+                    </p>
+                    <p class="flex items-center text-gray-700 mb-4">
+                        <i class="fas fa-phone-alt text-orange-500 mr-3 text-xl"></i>
+                        <span>電話：<a href="tel:+886-2-XXXX-XXXX" class="text-orange-500 hover:underline">02-XXXX-XXXX</a></span>
+                    </p>
+                    <p class="flex items-center text-gray-700 mb-6">
+                        <i class="fas fa-clock text-orange-500 mr-3 text-xl"></i>
+                        <span>營業時間：週一至週日 10:00 - 22:00</span>
+                    </p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                            <i class="fab fa-facebook-f text-3xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-pink-600 transition-colors duration-200">
+                            <i class="fab fa-instagram text-3xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-green-500 transition-colors duration-200">
+                            <i class="fab fa-line text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; 2023 您的品牌. All rights reserved.</p>
+            <p class="mt-2">隱私權政策 | 服務條款</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for smooth scrolling and review carousel
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll to contact section
+            window.scrollToContact = function() {
+                document.getElementById('contact-info').scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // Review Carousel Logic
+            const reviewsContainer = document.getElementById('reviews-container');
+            const reviewItems = reviewsContainer.querySelectorAll('.flex-shrink-0');
+            const prevBtn = document.getElementById('prev-review');
+            const nextBtn = document.getElementById('next-review');
+            const dotsContainer = document.getElementById('review-dots');
+            const totalReviews = reviewItems.length / 2; // Assuming 3 visible + 1 duplicate for infinite scroll
+            let currentIndex = 0;
+            let itemWidth;
+
+            // Function to update itemWidth based on screen size
+            const updateItemWidth = () => {
+                if (window.innerWidth >= 768) { // md breakpoint
+                    itemWidth = reviewsContainer.querySelector('.flex-shrink-0').offsetWidth;
+                } else {
+                    itemWidth = reviewsContainer.querySelector('.flex-shrink-0').offsetWidth;
+                }
+            };
+
+            // Initialize width and event listener for resize
+            updateItemWidth();
+            window.addEventListener('resize', updateItemWidth);
+
+            function updateCarousel() {
+                // Calculate the offset for the current index
+                const offset = -currentIndex * itemWidth;
+                reviewsContainer.style.transform = `translateX(${offset}px)`;
+
+                // Update active dot
+                const activeDotIndex = currentIndex % totalReviews;
+                dotsContainer.querySelectorAll('.dot').forEach((dot, index) => {
+                    if (index === activeDotIndex) {
+                        dot.classList.add('bg-orange-500');
+                        dot.classList.remove('bg-gray-300');
+                    } else {
+                        dot.classList.remove('bg-orange-500');
+                        dot.classList.add('bg-gray-300');
+                    }
+                });
+            }
+
+            // Next button click
+            nextBtn.addEventListener('click', () => {
+                currentIndex++;
+                // If we reach the duplicate items, reset to the beginning instantly
+                if (currentIndex >= totalReviews) {
+                    reviewsContainer.style.transition = 'none'; // Disable transition for instant jump
+                    currentIndex = 0; // Jump to the real first item
+                    updateCarousel();
+                    // Re-enable transition after a short delay to allow the jump to render
+                    setTimeout(() => {
+                        reviewsContainer.style.transition = 'transform 0.5s ease-in-out';
+                    }, 50);
+                } else {
+                    updateCarousel();
+                }
+            });
+
+            // Previous button click
+            prevBtn.addEventListener('click', () => {
+                currentIndex--;
+                // If we go before the first item, jump to the end instantly
+                if (currentIndex < 0) {
+                    reviewsContainer.style.transition = 'none'; // Disable transition
+                    currentIndex = totalReviews - 1; // Jump to the real last item
+                    updateCarousel();
+                    // Re-enable transition
+                    setTimeout(() => {
+                        reviewsContainer.style.transition = 'transform 0.5s ease-in-out';
+                    }, 50);
+                } else {
+                    updateCarousel();
+                }
+            });
+
+            // Dot navigation
+            dotsContainer.querySelectorAll('.dot').forEach(dot => {
+                dot.addEventListener('click', (event) => {
+                    currentIndex = parseInt(event.target.dataset.index);
+                    updateCarousel();
+                });
+            });
+
+            // Initial update
+            updateCarousel();
+
+            // Auto-advance carousel (optional)
+            // setInterval(() => {
+            //     nextBtn.click();
+            // }, 5000); // Change review every 5 seconds
+        });
+    </script>
+</body>
+</html>
