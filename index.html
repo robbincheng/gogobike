@@ -1,78 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-        /* 全局設定：確保所有元素都能響應式調整 */
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box; /* 確保內邊距和邊框不會增加元素的總寬度 */
-            overflow-x: hidden; /* 防止水平滾動條出現 */
-        }
-
-        /* 針對圖片的響應式處理 */
-        img {
-            max-width: 100%; /* 圖片最大寬度為其父元素的 100% */
-            height: auto; /* 保持圖片的原始比例 */
-            display: block; /* 消除圖片底部可能出現的空白 */
-        }
-
-        /* 針對可能超出螢幕的內容容器 */
-        /* 你需要根據你的實際 HTML 結構，找到那個可能超出螢幕的父容器 */
-        /* 假設你的主要內容是在一個 div 中，例如 <div class="main-content"> */
-        .main-content { /* 請替換成你實際的容器類名或 ID */
-            max-width: 100%;
-            overflow-x: hidden; /* 如果有內容超出，則隱藏水平方向的滾動 */
-            box-sizing: border-box;
-        }
-
-        /* 如果有表格，請確保表格內容不會超出 */
-        table {
-            width: 100%;
-            display: block; /* 讓表格在小螢幕上可以滾動 */
-            overflow-x: auto; /* 在小螢幕上允許水平滾動 */
-            -webkit-overflow-scrolling: touch; /* 改善 iOS 上的滾動體驗 */
-        }
-
-        /* 針對影片（如果你有嵌入影片） */
-        .video-container { /* 假設你用一個容器包裝影片 */
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 比例 (高 / 寬 * 100%) */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-        }
-
-        .video-container iframe,
-        .video-container object,
-        .video-container embed {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* 使用媒體查詢 (Media Queries) 針對不同設備調整樣式 */
-        @media screen and (max-width: 768px) { /* 針對平板和手機 */
-            /* 在這裡添加針對小螢幕的特定樣式調整 */
-            /* 例如，如果你的導航欄在小螢幕上變得奇怪，可以在這裡調整 */
-            .navigation {
-                flex-direction: column; /* 讓導航項目垂直堆疊 */
-            }
-        }
-
-        @media screen and (max-width: 480px) { /* 針對手機 */
-            /* 在這裡添加針對更小螢幕的特定樣式調整 */
-            h1 {
-                font-size: 1.5em; /* 縮小標題字體大小 */
-            }
-        }
-    </style>
     <meta charSet="utf-8" data-next-head=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1" data-next-head=""/> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900" rel="stylesheet" data-next-head=""/>
     <title data-next-head="">騎向世界：專業單車旅遊規劃平台</title>
+    <style>
+        /* 1. 全局強制響應式行為 */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            /* 確保 border-box 應用於所有元素，避免 padding 和 border 造成溢出 */
+            box-sizing: border-box !important;
+            /* 隱藏任何水平方向的溢出，防止滾動條 */
+            overflow-x: hidden !important;
+            /* 確保寬度為視口寬度 */
+            width: 100% !important;
+            min-width: 0 !important; /* 確保沒有最小寬度限制導致溢出 */
+        }
+
+        /* 針對所有元素，確保其寬度能夠適應父容器 */
+        * {
+            box-sizing: border-box !important;
+        }
+
+        /* 2. 針對圖片和影片，確保其完全響應式 */
+        img, video, iframe {
+            max-width: 100% !important; /* 圖片最大寬度為其父元素的 100% */
+            height: auto !important;     /* 保持原始比例 */
+            display: block !important;   /* 消除圖片底部可能的多餘空間 */
+            /* 確保沒有固定的寬度或最小寬度限制 */
+            width: auto !important;
+            min-width: 0 !important;
+        }
+
+        /* 如果圖片或影片在某些框架內，確保框架也響應式 */
+        div img, div video, div iframe {
+            max-width: 100% !important;
+            height: auto !important;
+            width: auto !important;
+            min-width: 0 !important;
+        }
+
+        /* 3. 針對文字換行問題 */
+        /* 強制長單詞換行，避免單詞過長導致溢出 */
+        p, span, div, h1, h2, h3, h4, h5, h6, li, td {
+            word-wrap: break-word !important; /* IE 瀏覽器兼容 */
+            overflow-wrap: break-word !important; /* 現代瀏覽器 */
+            /* 確保文字不會強制不換行 */
+            white-space: normal !important;
+        }
+
+        /* 4. 針對可能導致溢出的容器 */
+        /* 你的頁面根容器是 #__next */
+        #__next {
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+            min-width: 0 !important; /* 確保不會因為 min-width 導致溢出 */
+        }
+
+        /* 針對所有可能包含內容的 div 元素 */
+        div {
+            max-width: 100% !important;
+            /* 如果有 flex 或 grid 布局，可能需要調整 */
+            flex-shrink: 1 !important; /* 允許 flex 項目縮小 */
+            min-width: 0 !important; /* 確保 flex 或 grid 項目不會導致溢出 */
+        }
+
+        /* 5. 針對表格 (如果有的話) */
+        table {
+            width: 100% !important;
+            display: block !important; /* 讓表格在小螢幕上可以滾動 */
+            overflow-x: auto !important; /* 在小螢幕上允許水平滾動 */
+            -webkit-overflow-scrolling: touch !important; /* 改善 iOS 上的滾動體驗 */
+            min-width: 0 !important;
+        }
+
+        /* 6. 媒體查詢 - 針對更小的螢幕進一步調整 (可選) */
+        @media screen and (max-width: 768px) {
+            /* 在這裡可以針對平板和手機進行更細緻的調整 */
+            /* 例如：字體大小、內邊距、外邊距等 */
+            body {
+                font-size: 16px !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            /* 針對更小的手機螢幕 */
+            h1 {
+                font-size: 2em !important; /* 適當縮小標題字體 */
+            }
+            p {
+                font-size: 0.9em !important; /* 適當縮小段落字體 */
+            }
+        }
+    </style>
+
     <meta name="robots" content="noindex, nofollow" data-next-head=""/>
     <meta content="探索無限可能，我們為您精心策劃臺灣及日本的頂級單車旅遊體驗，結合文化、美食與美景，創造難忘的騎行記憶。&#10;&#10;立即預約行程&#10;&#10;了解更多服務" name="description" data-next-head=""/>
     <meta content="騎向世界：專業單車旅遊規劃平台" property="og:title" data-next-head=""/>
@@ -83,7 +106,7 @@
 </head>
 <body>
     </body>
-</html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900" rel="stylesheet" data-next-head=""/><title data-next-head="">騎向世界：專業單車旅遊規劃平台</title><meta name="robots" content="noindex, nofollow" data-next-head=""/><meta content="探索無限可能，我們為您精心策劃臺灣及日本的頂級單車旅遊體驗，結合文化、美食與美景，創造難忘的騎行記憶。
+</html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width, initial-scale=1" data-next-head=""/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900" rel="stylesheet" data-next-head=""/><title data-next-head="">騎向世界：專業單車旅遊規劃平台</title><meta name="robots" content="noindex, nofollow" data-next-head=""/><meta content="探索無限可能，我們為您精心策劃臺灣及日本的頂級單車旅遊體驗，結合文化、美食與美景，創造難忘的騎行記憶。
 
 立即預約行程
 
